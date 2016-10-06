@@ -11,15 +11,24 @@
 </head>
 <body>
     <div class="container">
+        <p></p>
         <nav>
-            <button class="btn-lg">home</button>
-            <button class="btn-lg">about</button>
-            <button class="btn-lg">contact</button>
+            <button class="btn-lg">Home</button>
+            <button class="btn-lg">About</button>
+            <button class="btn-lg">Contact</button>
         </nav>
-        <p>1</p>
+        <div class="row">
+            <div class="col-lg-1">
+                <p>SPACER</p>
+            </div>
+        </div>
         <div>
             @RenderBody()
         </div>
+
+        <footer>
+            (C) Potatis AB 2016
+        </footer>
     </div>
 </body>
 </html>
