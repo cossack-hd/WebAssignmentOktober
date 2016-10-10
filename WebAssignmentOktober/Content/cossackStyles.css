@@ -1,0 +1,18 @@
+﻿
+#window {
+    border: 0px solid;
+    overflow: hidden;
+    width: 300px;
+}
+
+.inner-window {
+    width: 90000px;
+    position: relative;
+    right: 0;
+}
+
+.slide {
+    width: 300px;
+    border: 0px solid blue;
+    display: inline-block;
+}
