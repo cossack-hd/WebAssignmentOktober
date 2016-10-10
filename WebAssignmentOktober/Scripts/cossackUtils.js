@@ -1,4 +1,11 @@
-﻿slides_num = 1;
+﻿
+
+function setActiveProperty(elementId)
+{
+    document.getElementById(elementId).setAttribute("class", "active");
+}
+
+slides_num = 1;
 current_slide = 0;
 
 function initSlides(timer) {
