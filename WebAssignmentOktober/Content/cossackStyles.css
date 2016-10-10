@@ -1,4 +1,14 @@
-﻿
+﻿body {
+    background: linear-gradient(#000000 0%, #006dac 80%, #000000 100%);
+    background-repeat: no-repeat;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+}
+
+
 #window {
     border: 0px solid;
     overflow: hidden;
