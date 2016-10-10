@@ -9,42 +9,33 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <script src="~/Scripts/jquery-1.9.1.js"></script>
-
+    <script src="~/Scripts/bootstrap.js"></script>
 
 
 </head>
 <body style="background-color: #5f5f5f">
     <div class="container" style="margin-top: 20px; background-color:#ffffff; border-radius: 10px">
+
         <nav>
             <ul class="nav nav-pills h3">
-                <li role="presentation"><a href="Home/Index/">Home</a></li>
-                <li role="presentation"><a href="Home/About/">About</a></li>
-                <li role="presentation"><a href="Home/Contact/">Contact</a></li>
+                <li role="presentation"><a href="/Home/Index">Startsidan</a></li>
+                <li role="presentation"><a href="/Home/About">Mer om mig</a></li>
+                <li role="presentation"><a href="/Home/Contact">Kontakta mig</a></li>
             </ul>
         </nav>
-
-
-
-
-
 
         <div class="row">
             &nbsp;
         </div>
-
-
-
-
 
         <div>
             @RenderBody()
         </div>
 
-
-
         <div class="row">
             &nbsp;
         </div>
+
         <footer class="text-center">
             (C) Potatis AB 2016
         </footer>
