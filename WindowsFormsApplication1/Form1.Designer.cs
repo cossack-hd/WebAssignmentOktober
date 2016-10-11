@@ -36,6 +36,7 @@
             this.tbxTitle = new System.Windows.Forms.TextBox();
             this.tbxText = new System.Windows.Forms.TextBox();
             this.tbxImageLink = new System.Windows.Forms.TextBox();
+            this.btnDebugAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbxItems
@@ -65,6 +66,7 @@
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRemove
             // 
@@ -74,6 +76,7 @@
             this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "Remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnApply
             // 
@@ -108,11 +111,22 @@
             this.tbxImageLink.Size = new System.Drawing.Size(188, 20);
             this.tbxImageLink.TabIndex = 7;
             // 
+            // btnDebugAdd
+            // 
+            this.btnDebugAdd.Location = new System.Drawing.Point(56, 223);
+            this.btnDebugAdd.Name = "btnDebugAdd";
+            this.btnDebugAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnDebugAdd.TabIndex = 8;
+            this.btnDebugAdd.Text = "TEST ADD";
+            this.btnDebugAdd.UseVisualStyleBackColor = true;
+            this.btnDebugAdd.Click += new System.EventHandler(this.btnDebugAdd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 277);
+            this.Controls.Add(this.btnDebugAdd);
             this.Controls.Add(this.tbxImageLink);
             this.Controls.Add(this.tbxText);
             this.Controls.Add(this.tbxTitle);
@@ -138,6 +152,7 @@
         private System.Windows.Forms.TextBox tbxTitle;
         private System.Windows.Forms.TextBox tbxText;
         private System.Windows.Forms.TextBox tbxImageLink;
+        private System.Windows.Forms.Button btnDebugAdd;
     }
 }
 
