@@ -45,6 +45,7 @@
             this.lbxItems.Name = "lbxItems";
             this.lbxItems.Size = new System.Drawing.Size(120, 134);
             this.lbxItems.TabIndex = 0;
+            this.lbxItems.SelectedIndexChanged += new System.EventHandler(this.lbxItems_SelectedIndexChanged);
             // 
             // btnAdd
             // 
@@ -54,6 +55,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -75,12 +77,13 @@
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(396, 193);
+            this.btnApply.Location = new System.Drawing.Point(372, 192);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 4;
             this.btnApply.Text = "Confirm";
             this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
             // tbxTitle
             // 
