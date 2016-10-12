@@ -2,6 +2,7 @@
 @{
     WebProjOctDBEntities myDataBase = new WebProjOctDBEntities();
     ViewBag.Title = "Om mig";
+    int collapseID = 1;
 }
 
 
@@ -13,25 +14,33 @@
     <div class="col-lg-12">
         <h2>Information om mig</h2>
         <div class="panel-group" id="accordion">
-            <p>@myDataBase.personalDatas.ToString()</p>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">CV</a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        Studerar Teknik-4 i Östra Gymnasiet med inriktning "Informationsteknik". </br>
-                        Arbetar deltid i Strikersoft AB (mjukvaroutvecklingsbolag); hanterar kunduppgifter i CRM, skapar ringlistor, översätter arbetsuppgifter åt outsourcers.
-                        <img class="img-responsive" src="~/Content/img/pic-list.jpg" width="500 px" />
+
+            @foreach (var item in myDataBase.personalDatas)
+            {
+                string collapseString = "collapse" + collapseID.ToString();
+                string collapseStringHash = "#collapse" + collapseID.ToString();
+                collapseID++;
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="@collapseStringHash">@item.title</a>
+                        </h4>
+                    </div>
+                    <div id="@collapseString" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p>@item.text</p>
+                            <img class="img-responsive" src="@item.imagelink" width="500 px" />
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            }
+
         </div>
     </div>
 
-    <div class="col-lg-12">
+    @*<div class="col-lg-12">
         <h2>Accordion 2 (Hardcoded)</h2>
         <div class="panel-group" id="accordion">
 
@@ -114,5 +123,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>*@
 </row>
