@@ -12,6 +12,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        personalData selectedData;
+
         bool editingMode = false;
         bool isAddingNewRecord = false;
         bool isEditingARecord = false;
@@ -66,11 +68,13 @@ namespace WindowsFormsApplication1
                 tbxTitle.Text = selectedData.title;
                 tbxText.Text = selectedData.text;
                 tbxImageLink.Text = selectedData.imagelink;
+                btnApply.Enabled = false;
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            resetUIControllers(true);
             lockListBox();
 
             disableControls(false);
@@ -88,7 +92,7 @@ namespace WindowsFormsApplication1
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            resetUIControllers();
+            
 
             if (isAddingNewRecord)
             {
@@ -107,42 +111,58 @@ namespace WindowsFormsApplication1
 
             if (isEditingARecord)
             {
-                personalData editedData = (personalData)lbxItems.SelectedItem;
-                editedData.title = tbxTitle.Text;
-                editedData.text = tbxText.Text;
-                editedData.imagelink = tbxImageLink.Text;
+                selectedData.title = tbxTitle.Text;
+                selectedData.text = tbxText.Text;
+                selectedData.imagelink = tbxImageLink.Text;
 
             }
 
             myDataBase.SaveChanges();
 
-            resetUIControllers();
+            resetUIControllers(true);
             displayItems();
 
         }
 
-        private void resetUIControllers()
+        private void resetUIControllers(bool resetIndex)
         {
             disableControls(true);
             emptyTextBoxes();
-            lbxItems.SelectedIndex = -1;
             displayItems();
             lbxItems.Enabled = true;
             editingMode = false;
+            btnApply.Enabled = false;
 
             editingMode = false;
             isAddingNewRecord = false;
             isEditingARecord = false;
             isRemovingARecord = false;
+
+            if (resetIndex)
+                lbxItems.SelectedIndex = -1;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
+            selectedData = (personalData)lbxItems.SelectedItem;
+            resetUIControllers(true);
+
+            tbxTitle.Text = selectedData.title.Trim();
+            tbxText.Text = selectedData.text.Trim();
+            tbxImageLink.Text = selectedData.imagelink.Trim();
+            disableControls(false);
+            btnApply.Enabled = true;
+
+
             isEditingARecord = true;
+
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            //resetUIControllers(false);
+            btnApply.Enabled = true;
             isRemovingARecord = true;
         }
 
