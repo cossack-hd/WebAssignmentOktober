@@ -1,5 +1,6 @@
 ﻿
 @{
+    WebProjOctDBEntities myDataBase = new WebProjOctDBEntities();
     ViewBag.Title = "Om mig";
 }
 
@@ -12,6 +13,7 @@
     <div class="col-lg-12">
         <h2>Information om mig</h2>
         <div class="panel-group" id="accordion">
+            <p>@myDataBase.personalDatas.ToString()</p>
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -26,6 +28,29 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <h2>Accordion 2 (Hardcoded)</h2>
+        <div class="panel-group" id="accordion">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">CV</a>
+                    </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        Studerar Teknik-4 i Östra Gymnasiet med inriktning "Informationsteknik". </br>
+                        Arbetar deltid i Strikersoft AB (mjukvaroutvecklingsbolag); hanterar kunduppgifter i CRM, skapar ringlistor, översätter arbetsuppgifter åt outsourcers.
+                        <img class="img-responsive" src="~/Content/img/pic-list.jpg" width="500 px" />
+                    </div>
+                </div>
+            </div>
+
+
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
@@ -63,7 +88,7 @@
                         kommunicera och skapa väldetaljerade rapporter om mitt arbete i gymnasiet. Se mitt gymnasiearbete här:
                         <a href="http://ursus.one/gas/_uploads/SW_2_74.pdf" target="_blank">Webbutveckling, bygger en egen webbapp på en färdig webmotor motor "Nibbleblog"</a>
                         &nbsp;
-                        
+
                     </div>
                 </div>
             </div>
