@@ -1,6 +1,6 @@
-﻿
+﻿@model System.Collections.Generic.List<personalData> 
 @{
-    WebProjOctDBEntities myDataBase = new WebProjOctDBEntities();
+
     ViewBag.Title = "Om mig";
     int collapseID = 1;
 }
@@ -11,7 +11,7 @@
 </script>
 
 <row>
-    <div class="col-lg-12">
+    @*<div class="col-lg-12">
         <h2>Information om mig</h2>
         <div class="panel-group" id="accordion">
 
@@ -38,9 +38,9 @@
             }
 
         </div>
-    </div>
+    </div>*@
 
-    @*<div class="col-lg-12">
+    <div class="col-lg-12">
         <h2>Accordion 2 (Hardcoded)</h2>
         <div class="panel-group" id="accordion">
 
@@ -123,5 +123,5 @@
                 </div>
             </div>
         </div>
-    </div>*@
+    </div>
 </row>

@@ -6,6 +6,8 @@ using System.Web.Mvc;
 
 namespace WebAssignmentOktober.Controllers
 {
+
+
     public class HomeController : Controller
     {
         // GET: Home
@@ -16,7 +18,7 @@ namespace WebAssignmentOktober.Controllers
 
         public ActionResult About()
         {
-            return View();
+            return View(new WebProjOctDBEntities().personalDatas.ToList());
         }
 
         public ActionResult Contact()
